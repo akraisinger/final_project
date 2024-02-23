@@ -10,9 +10,11 @@ def sent_detector():
     output = "For the given statement, the system response is "
     for emotion in response.keys():
         if emotion != 'dominant emotion':
+            print(list(response.keys()).index(emotion))
             output += f"'{emotion}': {response[emotion]}, "
-        elif emotion.index == -1:
-            output[-1]=""
+            if list(response.keys()).index(emotion) == len(response)-2:
+                print("success")
+                output=output[:-2]
         else:
             output += f". The dominant emotion is {response[emotion]}"
     return output
