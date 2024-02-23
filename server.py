@@ -16,7 +16,7 @@ def sent_detector():
                 print("success")
                 output=output[:-2]
         else:
-            output += f". The dominant emotion is {response[emotion]}"
+            output += f". The dominant emotion is <b>{response[emotion]}</b>."
     return output
 
 @app.route("/")
